@@ -6,7 +6,7 @@ import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@DiscriminatorValue("A")
+@DiscriminatorValue("ADMINISTRADOR")
 public class UsuarioAdmin extends Usuario {
 	private static final long serialVersionUID = 1L;
 	@NotBlank(message="El campo telefono es obligatorio para Admin.")

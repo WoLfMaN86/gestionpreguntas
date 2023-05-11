@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.Transient;
 
 @Entity
-@DiscriminatorValue("N")
+@DiscriminatorValue("NO_ADMINISTRADOR")
 public class UsuarioNoAdmin extends Usuario {
 	private static final long serialVersionUID = 1L;
 	public static enum Departamento {

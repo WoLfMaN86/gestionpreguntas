@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import es.mdef.gestionpreguntas.entidades.Usuario;
 import es.mdef.gestionpreguntas.repositorios.UsuarioRepositorio;
 
 @Service
@@ -17,9 +18,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return repositorio.findByUsername(username)
+		Usuario u =repositorio.findByUsername(username)
 				.orElseThrow(() -> new UsernameNotFoundException(
 						"Usuario " + username + " no encontrado"));
+		return u;
 	}
 
 }
